@@ -1,0 +1,19 @@
+<div id="contentdiv">
+    <form id="loginForm" [formGroup]="loginForm" (submit)="onSubmit()" novalidate>   
+        <h2>Welcome to Maze Bank</h2>
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" name="username" required="true" class="form-control" formControlName="username" placeholder="burh"/>
+            <div *ngIf="!loginForm.get('username')?.valid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)" class="validationText" [@fadeInSlideUp]>Please specify a Username. </div>              
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" required="true" class="form-control" formControlName="password" id="passwordInput">
+            <div *ngIf="!loginForm.get('password')?.valid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)" class="validationText" [@fadeInSlideUp]>Please specify a Password. </div>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" [disabled]="!loginForm.valid">Login</button>
+            <a class="btn btn-link"  href="/register" >Register</a>
+        </div>
+    </form>
+</div>

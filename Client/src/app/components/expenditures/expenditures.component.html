@@ -1,0 +1,16 @@
+<div class="graphDiv">
+    <mat-form-field>
+        <input matInput [matDatepicker]="dp2" placeholder="" (dateChange)="handleDateChange($event)">
+        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2 startView="multi-year" ></mat-datepicker>
+    </mat-form-field>
+
+    <ngx-charts-pie-chart
+    [scheme]="colorScheme"
+    [results]="pieChartData"
+    [doughnut]="false"
+    [legend]="true"
+    [explodeSlices]="false"
+    [labels]="true">
+    </ngx-charts-pie-chart>
+</div>

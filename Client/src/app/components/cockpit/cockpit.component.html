@@ -1,0 +1,15 @@
+<mat-tab-group>
+    <mat-tab label="Transactions" class="mat-tab-label">
+        <app-last-transactions ></app-last-transactions>
+    </mat-tab>
+    <mat-tab label="Linechart" class="mat-tab-label">
+        <app-linechart *ngIf="currentAccount && transactions"[currentAccount]="currentAccount" [transactionData]="transactions"></app-linechart>
+    </mat-tab>
+    <mat-tab label="Expenditure" class="mat-tab-label">
+        <app-expenditures *ngIf="currentAccount" [currentAccount]="currentAccount"></app-expenditures>
+    </mat-tab>
+    <mat-tab label="Budgetplan" class="mat-tab-label">
+        <app-budgetplan *ngIf="currentAccount" [currentAccount]="currentAccount"></app-budgetplan>
+    </mat-tab>
+</mat-tab-group>
+  

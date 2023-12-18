@@ -1,0 +1,30 @@
+#registerForm {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: "Burbank Big Condensed Bold";
+
+}
+h2{
+    font-family: "Burbank Big Condensed Bold";
+    padding-bottom: 5px;
+    border-bottom: 2px solid gray;
+
+}
+label{
+    font-size: 33px;
+}
+input{
+    font-size: 33px;
+}
+
+/* Responsive Style */
+@media (max-width: 768px) {
+    #registerForm {
+        max-width: 100%;
+    }
+}

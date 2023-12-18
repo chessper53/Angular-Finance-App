@@ -1,0 +1,15 @@
+<div class="graphDiv">
+    <mat-form-field>
+        <input matInput [matDatepicker]="dp2" placeholder="" (dateChange)="handleDateChange($event)">
+        <mat-datepicker-toggle matSuffix [for]="dp2"></mat-datepicker-toggle>
+        <mat-datepicker #dp2 startView="multi-year" ></mat-datepicker>
+    </mat-form-field>
+    
+    <ngx-charts-line-chart
+    [scheme]="colorScheme"
+    [results]="chartData"
+    [xAxis]="showXAxis"
+    [yAxis]="showYAxis"
+    [legend]="showLegend">
+    </ngx-charts-line-chart>
+</div>

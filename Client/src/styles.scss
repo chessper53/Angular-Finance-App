@@ -1,0 +1,100 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+@import url(https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold);
+*{
+    font-family: "Burbank Big Condensed Bold";
+    font-size: 35px;
+}
+body {
+    margin: 0;
+    font-family: "Burbank Big Condensed Bold";
+    font-family:'Courier New', Courier, monospace;
+} 
+small{
+    font-size: medium;
+    font-family:'Courier New', Courier, monospace
+}
+#logo{
+    width: auto;
+    height: 100px;
+}
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+#contentdiv{
+    padding-top: 30px;
+}
+header {
+    margin: 0;
+    border-bottom: 2px solid #e74c3c;
+    padding: 10px;
+    text-align: left;
+    background-color: #f2f2f270;
+}
+h2{
+    color: black;
+    text-align: center;
+    font-family: "Burbank Big Condensed Bold";
+
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: bold;
+    font-family: "Burbank Big Condensed Bold";
+
+}
+.form-group {
+    margin-bottom: 20px;
+    font-family: "Burbank Big Condensed Bold";
+
+}
+.form-control {
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    width: 100%;
+    border-radius: 4px;
+}
+.btn-primary {
+    font-family: "Burbank Big Condensed Bold";
+    background-color: red;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.btn-primary[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.btn-link {
+    font-family: "Burbank Big Condensed Bold";
+    color: gray;
+    text-decoration: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+.btn-link:hover {
+    color: darkred;
+}
+.btn-primary:hover {
+    background-color: darkred;
+}
+#formerror{
+    font-family: "Burbank Big Condensed Bold";
+    color: red;
+    font-style: italic;
+}
+.validationText{
+    font-size: large;   
+    font-family:'Courier New', Courier, monospace;
+    color: darkred;
+}
+.graphDiv{
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; 
+    padding: 10px;
+}

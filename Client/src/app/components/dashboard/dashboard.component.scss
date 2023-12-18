@@ -1,0 +1,60 @@
+#dashboardInterface {
+    display: flex; 
+}
+#parentDiv {
+    flex: 1;
+    margin: 10px;
+}
+p{
+    margin: 0%;
+}
+.balance{
+    font-size: 20px;
+    font-family: 'Courier New', Courier, monospace;   
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    font-weight: bold;
+}
+#newPayment{    
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+.h2Dashboard{
+    text-align: left;
+    margin: 0%;
+    margin-left: 0.5%;
+    font-size: 32px;
+    border-bottom: 2px solid black;
+}
+label{
+    font-size: 28px;
+}
+input{
+    font-size: 17px;
+    font-family: 'Courier New', Courier, monospace;   
+}
+.logoutBtn, .cockpitBtn{
+    background-color: red;
+    color: #fff;
+    padding: 6px 10px;
+    font-size: 20px;
+    margin-left: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+button{ 
+    font-size: 20px;
+}
+.miniUI{
+    position: fixed;
+    top: 60px;
+    right: 10px;
+}
+.validationText{
+    font-size: medium;  
+    font-family:'Courier New', Courier, monospace;
+    color: darkred;
+}

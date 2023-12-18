@@ -1,0 +1,37 @@
+<div id="dashboardInterface">
+   <div class="miniUI">
+      <button (click)="navCockpit()" class="cockpitBtn">e-Cockpit</button> 
+      <button *ngIf="firstname" class="logoutBtn" (click)="logOut()">Logout as {{firstname}}</button>
+      <span *ngIf="amount" class="balance"> Account balance: {{amount}}</span>
+   </div>
+
+   <div id="parentDiv">
+      <div id="newPayment">
+         <h2 class="h2Dashboard">New Payment: </h2> <br>
+            <form [formGroup]="TransactionForm" (submit)="onSubmit()" novalidate>
+                  <div class="form-group">
+                     <label for="fromInput" class="dashboardLabels">From:</label>
+                     <input type="text" name="fromInput" required="true" class="form-control" *ngIf="amount, accountNr" id="fromInput" disabled="true" value="{{accountNr}} [{{amount}} CHF]">
+                  </div>
+                  <div class="form-group">
+                     <label for="toInput">To:</label>
+                     <input type="number" name="toInput" required="true" class="form-control" formControlName="receiver" id="toInput" placeholder="Target Account Number" required="true" (keyup)="checkReceiverValidity()">
+                     <div *ngIf="errorMessage"  class="validationText" [@fadeInSlideUp]>{{errorMessage}}</div>
+                     <small>Please specify the target account number.</small>
+                  </div>
+                  <div class="form-group">
+                     <input type="number" name="amountInput" required="true" class="form-control" formControlName="amount" id="amountInput" placeholder="Amount in CHF" required="true">
+                     <div *ngIf="checkAmount()" class="validationText" [@fadeInSlideUp]>The Amount is higher than your  Account balance! </div>
+                     <small>Please specify the Amount.</small>
+                  </div>
+                  <div class="form-group">
+                     <button class="btn btn-primary" [disabled]="!TransactionForm.valid">Pay</button>
+                  </div>
+            </form>
+      </div>
+   </div>
+      <app-last-transactions></app-last-transactions>
+</div>
+
+
+   

@@ -1,0 +1,83 @@
+@import url(https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold);
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    font-size: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+}
+th{
+    font-size: 30px ;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #e74c3c !important;
+}
+tr:nth-child(even){background-color: #f2f2f2;}
+tr:hover {background-color: #ddd;}
+.h2Dashboard{
+    text-align: left;
+    margin: 0%;
+    font-size: 32px;
+    margin-left: 0.5%;
+    border-bottom: 2px solid black;
+    font-family: "Burbank Big Condensed Bold";
+}
+#parentDiv {
+    font-family: "Burbank Big Condensed Bold";
+    flex: 1;
+    margin: 10px;
+    margin-left: 0px;
+}
+#latestTransactions {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; 
+    padding: 10px;
+}
+.mat-mdc-tab-group, .mat-mdc-tab-nav-bar {
+  --mdc-tab-indicator-active-indicator-color: red;
+  --mat-tab-header-disabled-ripple-color: rgba(0, 0, 0, 0.38);
+  --mat-tab-header-pagination-icon-color: #000;
+  --mat-tab-header-inactive-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-label-text-color: red;
+  --mat-tab-header-active-ripple-color: red;
+  --mat-tab-header-inactive-ripple-color: red;
+  --mat-tab-header-inactive-focus-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-inactive-hover-label-text-color: rgba(0, 0, 0, 0.6);
+  --mat-tab-header-active-focus-label-text-color: red;
+  --mat-tab-header-active-hover-label-text-color: red;
+  --mat-tab-header-active-focus-indicator-color: red;
+  --mat-tab-header-active-hover-indicator-color: red;
+}
+//Add this to your css/scss File
+::ng-deep {
+    .cdk-overlay-container,
+    .cdk-global-overlay-wrapper {
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+    .cdk-overlay-container {
+      position: fixed;
+      z-index: 1000;
+    }
+  
+    .cdk-overlay-pane {
+      position: absolute;
+      pointer-events: auto;
+      box-sizing: border-box;
+      z-index: 1000;
+      display: flex;
+      max-width: 100%;
+      max-height: 100%;
+    }
+}
+
