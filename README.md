@@ -1,7 +1,7 @@
 # Angular-Finance-App
 Pretty straightforward financial application that facilitates transactions between accounts. 
 It utilizes a database as a server to store and retrieve financial data.
-The app allows users to conduct transactions but also provides visual representations of expenses and profits through various charts.
+The app allows users to conduct transactions but also provides visual representations of expenses and profits through various [charts](https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical).
 
 # Project Setup
 ## Angular Material Modules
