@@ -12,10 +12,10 @@
       </div>
       <div class="newPayment">
          <h2 class="h2Dashboard">New Payment: </h2> <br>
-            <form [formGroup]="TransactionForm" (submit)="onSubmit()" novalidate>
+            <form [formGroup]="TransactionForm" (submit)="onSubmit()" novalidate  autocomplete="off">
                   <div class="form-group">
                      <label for="fromInput" class="dashboardLabels">From:</label>
-                     <input type="text" name="fromInput" required="true" class="form-control" *ngIf="amount, accountNr" id="fromInput" disabled="true" value="{{accountNr}} [{{amount}} CHF]">
+                     <input type="text" name="fromInput" required="true" class="form-control" *ngIf="amount, accountNr" id="fromInput" disabled="true" value="{{accountNr}} [{{formaterService.formatCurrency(amount)}} CHF]">
                   </div>
                   <div class="form-group">
                      <label for="toInput">To:</label>

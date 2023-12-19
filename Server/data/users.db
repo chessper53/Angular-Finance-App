@@ -1,5 +1,7 @@
-{"login":"user1","firstname":"Bob","lastname":"Müller","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000001","_id":"80fdEWKr4REcjTsc"}
+{"login":"user1","firstname":"Anes","lastname":"Müller","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000001","_id":"80fdEWKr4REcjTsc"}
+{"login":"eater","firstname":"esse","lastname":"eat","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000004","_id":"P5nQ1e1TMRS2H05R"}
 {"login":"user2","firstname":"Lisa","lastname":"Meier","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000002","_id":"WfGZJdnuqXosPzDR"}
 {"login":"user3","firstname":"Kevin","lastname":"Schmidt","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000003","_id":"qpFQevnOW3JMevcv"}
 {"$$indexCreated":{"fieldName":"login","unique":true,"sparse":true}}
 {"$$indexCreated":{"fieldName":"accountNr","unique":true,"sparse":true}}
+{"login":"esse","firstname":"eat","lastname":"eater","passwordHash":"879e0a6c3793565633ce410c15da9c6d0ab417dd627274e1e28e577a3f247ef6","accountNr":"1000005","_id":"9DxHnpVDYCuQjUGi"}

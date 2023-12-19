@@ -6,6 +6,7 @@ import { AccountBalance, AccountService } from 'src/app/services/account.service
 import { Transaction, TransactionService, TransactionConfirmation } from 'src/app/services/transaction.service';
 import { FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule  } from '@angular/forms';
 import { trigger, state, style, animate, transition } from '@angular/animations';
+import { FormaterService } from 'src/app/services/formater.service';
 
 
 @Component({
@@ -24,7 +25,7 @@ import { trigger, state, style, animate, transition } from '@angular/animations'
   ],
 })
 export class DashboardComponent implements OnInit{
-  constructor( private router: Router, public localsave:LocalsaveService, public accountservice: AccountService, public transactionService:TransactionService, private fb: FormBuilder){}
+  constructor( private router: Router, public localsave:LocalsaveService, public accountservice: AccountService, public transactionService:TransactionService, private fb: FormBuilder,  public formaterService:FormaterService){}
 
   TransactionForm!: FormGroup 
   token!: string
@@ -77,6 +78,7 @@ export class DashboardComponent implements OnInit{
       setTimeout(() => {
         newPaymentDiv.style.display = 'block';
         transactionConfirmDiv.style.display = 'none';
+        window.location.reload();
       }, 3000);
     }
   }
