@@ -3,6 +3,7 @@ import { FormControl } from '@angular/forms';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { Subject } from 'rxjs';
 import { AccountBalance } from 'src/app/services/account.service';
+import { FormaterService } from 'src/app/services/formater.service';
 import { LocalsaveService } from 'src/app/services/localsave.service';
 import { DateQuery, TransactionConfirmation, TransactionQuery, TransactionService } from 'src/app/services/transaction.service';
 
@@ -13,7 +14,7 @@ import { DateQuery, TransactionConfirmation, TransactionQuery, TransactionServic
   styleUrls: ['./budgetplan.component.scss']
 })
 export class BudgetplanComponent implements OnInit{
-  constructor(public transactionService:TransactionService, public localsave:LocalsaveService){ }
+  constructor(public transactionService:TransactionService, public localsave:LocalsaveService, public formaterService:FormaterService){ }
   @Input() currentAccount!: AccountBalance
 
   BudgetChartData!: any[];
@@ -57,25 +58,16 @@ export class BudgetplanComponent implements OnInit{
     this.fetchTransactions();
   }
 
-  formatManualDate(dateString: string | Date): string {
-    const date = typeof dateString === 'string' ? new Date(dateString) : dateString;
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${year}-${month}-${day}`;
-  }
-
   fetchTransactions(): void {
     this.transactionService.getTransactions(this.token, this.dateQuery).subscribe(
       (a: TransactionQuery) => {
         this.transaction.next(a);
         this.transactions = a?.result || [];
-  
-        const allMonths = this.getAllMonths(this.dateQuery.fromDate, this.dateQuery.toDate);
+        const allMonths = this.formaterService.formatAllMonths(this.dateQuery.fromDate, this.dateQuery.toDate);
         const dataByMonth = this.organizeDataByMonth(this.transactions);
-  
-        this.BudgetChartData = allMonths.map((month) => ({
-          name: month,
+        this.BudgetChartData = allMonths.map((month,index) => ({
+          name: this.formaterService.formatMonthName(month),
+          index: index + 1,
           series: [
             {
               name: 'Profit',
@@ -94,32 +86,13 @@ export class BudgetplanComponent implements OnInit{
     );
   }
   
-  
-  
-  getAllMonths(fromDate: Date, toDate: Date): string[] {
-    const allMonths: string[] = [];
-    let currentDate = new Date(fromDate);
-  
-    while (currentDate <= toDate) {
-      const year = currentDate.getFullYear();
-      const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-      allMonths.push(`${year}-${month}`);
-      currentDate.setMonth(currentDate.getMonth() + 1);
-    }
-  
-    return allMonths;
-  }
-  
   organizeDataByMonth(transactions: TransactionConfirmation[]): { [month: string]: { incoming: number; outgoing: number } } {
     const dataByMonth: { [month: string]: { incoming: number; outgoing: number } } = {};
-  
     transactions.forEach((transaction) => {
-      const yearMonth = this.formatManualDate(transaction.date).substring(0, 7);
-  
+      const yearMonth = this.formaterService.formatManualDate(transaction.date).substring(0, 7);
       if (!dataByMonth[yearMonth]) {
         dataByMonth[yearMonth] = { incoming: 0, outgoing: 0 };
       }
-      
       if (transaction.from !== this.currentAccount.accountNr) {
         dataByMonth[yearMonth].incoming += transaction.amount;
       } else {

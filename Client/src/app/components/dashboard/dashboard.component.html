@@ -5,8 +5,12 @@
       <span *ngIf="amount" class="balance"> Account balance: {{amount}}</span>
    </div>
 
-   <div id="parentDiv">
-      <div id="newPayment">
+   <div class="parentDiv">
+      <div class="transactionConfirm">
+         <h1 class="transactionConfirmText">The Transaction has been successful!</h1>
+         <img class="successful" src="assets/successful.png" alt="successful">
+      </div>
+      <div class="newPayment">
          <h2 class="h2Dashboard">New Payment: </h2> <br>
             <form [formGroup]="TransactionForm" (submit)="onSubmit()" novalidate>
                   <div class="form-group">
@@ -22,6 +26,7 @@
                   <div class="form-group">
                      <input type="number" name="amountInput" required="true" class="form-control" formControlName="amount" id="amountInput" placeholder="Amount in CHF" required="true">
                      <div *ngIf="checkAmount()" class="validationText" [@fadeInSlideUp]>The Amount is higher than your  Account balance! </div>
+                     <div *ngIf="checkAmountMinSize() && TransactionForm.get('amount')?.touched" class="validationText" [@fadeInSlideUp]>The Amount can't be lower than 0.05 CHF!</div>
                      <small>Please specify the Amount.</small>
                   </div>
                   <div class="form-group">

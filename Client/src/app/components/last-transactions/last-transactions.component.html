@@ -1,5 +1,5 @@
-<div id="parentDiv">
-    <div id="latestTransactions">
+<div class="parentDiv">
+    <div class="latestTransactions">
       <h2 class="h2Dashboard">Latest Transactions: </h2>
 
       <mat-form-field>
@@ -20,16 +20,17 @@
           <td mat-cell *matCellDef="let element"> {{element.target}} </td>
         </ng-container>
         <ng-container matColumnDef="amount">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount [CHF] </th>
-          <td mat-cell *matCellDef="let element"> {{element.amount}} </td>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Amount </th>
+          <td mat-cell *matCellDef="let element">{{formaterService.formatCurrency(element.amount)}}</td>
+
         </ng-container>
         <ng-container matColumnDef="total">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Balance [CHF] </th>
-          <td mat-cell *matCellDef="let element"> {{element.total}} </td>
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Balance </th>
+          <td mat-cell *matCellDef="let element">{{formaterService.formatCurrency(element.total)}}</td>
         </ng-container>
         <ng-container matColumnDef="date">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Date </th>
-          <td mat-cell *matCellDef="let element"> {{element.date | date:'short'}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.date | date:"HH:mm dd/MM/yy"}} </td>
         </ng-container>
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

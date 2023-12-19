@@ -19,10 +19,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatNativeDateModule } from '@angular/material/core';
-import { LinechartComponent } from './linechart/linechart.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ExpendituresComponent } from './components/expenditures/expenditures.component';
 import { BudgetplanComponent } from './components/budgetplan/budgetplan.component';
+import { LinechartComponent } from './components/linechart/linechart.component';
 
 
 @NgModule({
@@ -33,9 +33,9 @@ import { BudgetplanComponent } from './components/budgetplan/budgetplan.componen
     RegisterComponent,
     LastTransactionsComponent,
     CockpitComponent,
-    LinechartComponent,
     ExpendituresComponent,
     BudgetplanComponent,
+    LinechartComponent
   ],
   imports: [
     BrowserModule,

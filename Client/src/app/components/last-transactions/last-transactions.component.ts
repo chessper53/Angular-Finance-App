@@ -6,6 +6,7 @@ import { ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator'; 
 import { TransactionService, TransactionQuery, TransactionConfirmation, DateQuery } from 'src/app/services/transaction.service';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
+import { FormaterService } from 'src/app/services/formater.service';
 
 @Component({
   selector: 'app-last-transactions',
@@ -13,7 +14,7 @@ import { MatDatepickerInputEvent } from '@angular/material/datepicker';
   styleUrls: ['./last-transactions.component.scss']
 })
 export class LastTransactionsComponent implements OnInit{
-  constructor(public transactionService:TransactionService, public localsave:LocalsaveService,){}
+  constructor(public transactionService:TransactionService, public localsave:LocalsaveService, public formaterService:FormaterService){}
   @Input() cockpit: boolean = false;
   displayedColumns: string[] = ['from', 'target', 'amount', 'total', 'date']
   token!: string

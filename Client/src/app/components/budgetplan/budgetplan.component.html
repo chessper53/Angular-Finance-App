@@ -6,15 +6,14 @@
     </mat-form-field>
 
     <ngx-charts-bar-vertical-2d
-    [scheme]="colorScheme"
     [results]="BudgetChartData"
-    [xAxis]="showXAxis"
-    [yAxis]="showYAxis"
-    [legend]="showLegend"
+    [xAxis]="true"
+    [yAxis]="true"
+    [legend]="true"
     [showXAxisLabel]="showXAxisLabel"
     [showYAxisLabel]="showYAxisLabel"
     [xAxisLabel]="xAxisLabel"
     [yAxisLabel]="yAxisLabel"
-    [legendTitle]="legendTitle">
+    [scheme]="colorScheme">
     </ngx-charts-bar-vertical-2d>
 </div>

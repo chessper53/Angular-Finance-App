@@ -1,5 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
 @import url(https://db.onlinewebfonts.com/c/800e985f75a5a56c2f7b4be502d286de?family=Burbank+Big+Condensed+Bold);
 *{
     font-family: "Burbank Big Condensed Bold";
@@ -8,11 +6,16 @@
 body {
     margin: 0;
     font-family: "Burbank Big Condensed Bold";
-    font-family:'Courier New', Courier, monospace;
 } 
 small{
     font-size: medium;
-    font-family:'Courier New', Courier, monospace
+    font-family:'Courier New', Courier, monospace;
+}
+.parentDiv {
+    font-family: "Burbank Big Condensed Bold";
+    flex: 1;
+    margin: 10px;
+    margin-left: 0px;
 }
 #logo{
     width: auto;

@@ -8,8 +8,6 @@ import { FormBuilder, FormGroup, Validators, FormControl, ReactiveFormsModule  }
 import { trigger, state, style, animate, transition } from '@angular/animations';
 
 
-
-
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -38,9 +36,6 @@ export class DashboardComponent implements OnInit{
   login?: string
   errorMessage!: string
 
-
-
-  
   getPersonalAccountInfo(): void{
     this.accountservice.getCurrentBalance(this.token).
       subscribe({
@@ -70,6 +65,21 @@ export class DashboardComponent implements OnInit{
     localStorage.removeItem('mazebank-jwt');
     this.router.navigate(["/"]);
   }
+
+  showConfirmation(){
+    const newPaymentDiv = document.querySelector('.newPayment') as HTMLElement;
+    const transactionConfirmDiv = document.querySelector('.transactionConfirm') as HTMLElement;
+  
+    if (newPaymentDiv && transactionConfirmDiv) {
+      newPaymentDiv.style.display = 'none';
+      transactionConfirmDiv.style.display = 'block';
+
+      setTimeout(() => {
+        newPaymentDiv.style.display = 'block';
+        transactionConfirmDiv.style.display = 'none';
+      }, 3000);
+    }
+  }
  
   onSubmit(){
     if(this.TransactionForm.valid){
@@ -78,7 +88,7 @@ export class DashboardComponent implements OnInit{
         (confirmation: TransactionConfirmation) => {
           console.log('Transfer successful:', confirmation);
           this.getPersonalAccountInfo();
-          location.reload();
+          this.showConfirmation();
         },
         (error) => {
           console.error('Error during transfer:', error);
@@ -92,6 +102,13 @@ export class DashboardComponent implements OnInit{
       return false;
     }
     else{return true}
+  }
+
+  checkAmountMinSize(): boolean{
+    if(0.04 >= this.TransactionForm.value.amount){
+      return true;
+    }
+    else{return false}
   }
 
   checkReceiverValidity() : boolean{

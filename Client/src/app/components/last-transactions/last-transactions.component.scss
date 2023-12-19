@@ -29,13 +29,7 @@ tr:hover {background-color: #ddd;}
     border-bottom: 2px solid black;
     font-family: "Burbank Big Condensed Bold";
 }
-#parentDiv {
-    font-family: "Burbank Big Condensed Bold";
-    flex: 1;
-    margin: 10px;
-    margin-left: 0px;
-}
-#latestTransactions {
+.latestTransactions {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc; 
     padding: 10px;

@@ -1,4 +1,4 @@
-{"ownerId":"WfGZJdnuqXosPzDR","accountNr":"1000002","amount":1244,"_id":"AyOzAsfUMpRCWHXH"}
+{"ownerId":"WfGZJdnuqXosPzDR","accountNr":"1000002","amount":1333.06,"_id":"AyOzAsfUMpRCWHXH"}
 {"ownerId":"qpFQevnOW3JMevcv","accountNr":"1000003","amount":186,"_id":"a9X0NKlxrNfxG09O"}
-{"ownerId":"80fdEWKr4REcjTsc","accountNr":"1000001","amount":1570,"_id":"wB2i0MrIWk7RFQVl"}
+{"ownerId":"80fdEWKr4REcjTsc","accountNr":"1000001","amount":1480.94,"_id":"wB2i0MrIWk7RFQVl"}
 {"$$indexCreated":{"fieldName":"accountNr","unique":true,"sparse":true}}

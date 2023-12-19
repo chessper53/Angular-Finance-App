@@ -1,10 +1,6 @@
 #dashboardInterface {
     display: flex; 
 }
-#parentDiv {
-    flex: 1;
-    margin: 10px;
-}
 p{
     margin: 0%;
 }
@@ -16,7 +12,7 @@ p{
     right: 10px;
     font-weight: bold;
 }
-#newPayment{    
+.newPayment{    
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border: 1px solid #ccc; 
     padding: 10px;
@@ -57,4 +53,16 @@ button{
     font-size: medium;  
     font-family:'Courier New', Courier, monospace;
     color: darkred;
+}
+.transactionConfirm{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc; 
+    padding: 10px;
+    display: none;
+}
+.transactionConfirmText{
+    text-align: center;
+}
+.successful{
+    transform: scale(0.5);
 }

@@ -2,6 +2,7 @@ import { Component , Input, OnInit} from '@angular/core';
 import { MatDatepickerInputEvent } from '@angular/material/datepicker';
 import { Subject } from 'rxjs';
 import { AccountBalance } from 'src/app/services/account.service';
+import { FormaterService } from 'src/app/services/formater.service';
 import { LocalsaveService } from 'src/app/services/localsave.service';
 import { DateQuery, TransactionConfirmation, TransactionQuery, TransactionService } from 'src/app/services/transaction.service';
 
@@ -11,7 +12,7 @@ import { DateQuery, TransactionConfirmation, TransactionQuery, TransactionServic
   styleUrls: ['./expenditures.component.scss']
 })
 export class ExpendituresComponent implements OnInit{
-  constructor(public transactionService:TransactionService, public localsave:LocalsaveService){}
+  constructor(public transactionService:TransactionService, public localsave:LocalsaveService, public formaterService:FormaterService){}
   @Input() currentAccount!: AccountBalance
   
   pieChartData!: any[];
@@ -41,14 +42,6 @@ export class ExpendituresComponent implements OnInit{
     this.dateQuery.fromDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), 1);
     this.dateQuery.toDate = new Date(selectedDate.getFullYear(), selectedDate.getMonth() + 1, 0);
     this.fetchTransactions();
-  }
-
-  formatManualDate(dateString: string | Date): string {
-    const date = typeof dateString === 'string' ? new Date(dateString) : dateString;
-    const day = date.getDate().toString().padStart(2, '0');
-    const month = (date.getMonth() + 1).toString().padStart(2, '0');
-    const year = date.getFullYear();
-    return `${day}-${month}-${year}`;
   }
 
   fetchTransactions(): void {
