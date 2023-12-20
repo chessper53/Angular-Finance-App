@@ -1,2 +1,2 @@
 # Node Server für Praxisprojekt (Finance Portal)
-## Made by Silvan Gehrig
+## CC to [Silvan Gehrig](https://github.com/sgeh).
