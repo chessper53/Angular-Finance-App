@@ -5,10 +5,12 @@ The app allows users to conduct transactions but also provides visual representa
 
 # Project Setup
 ## Angular Material Modules
+Add these in the normal Directory:
 ```bash
 ng add @angular/material
 ```
 ## Other Dependencies
+Add these in the Client Directory:
 ```bash
 npm install --save @angular/forms
 npm install --save @angular/router
@@ -23,4 +25,19 @@ npm install --save rxjs
 npm install --save @swimlane/ngx-charts
 ```
 
+
+## Running the Client
+Open a terminal and navigate to the /Client/ directory.
+Run the following command:
+```bash
+npx ng serve --open
+```
+This will start the Angular development server and automatically open the project in your default web browser.
+
+## Running the Server
+Open a separate terminal and navigate to the /Server/ directory.
+Run the following command:
+```bash
+npm run start
+```
 
