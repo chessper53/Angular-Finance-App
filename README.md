@@ -28,16 +28,15 @@ npm install --save @swimlane/ngx-charts
 
 ## Running the Client
 Open a terminal and navigate to the /Client/ directory.
-Run the following command:
+Then run the following command:
 ```bash
 npx ng serve --open
 ```
-This will start the Angular development server and automatically open the project in your default web browser.
-
 ## Running the Server
 Open a separate terminal and navigate to the /Server/ directory.
-Run the following command:
+Then run the following command:
 ```bash
 npm run start
 ```
+This will start the Angular development server and automatically open the project in your default web browser.
 
